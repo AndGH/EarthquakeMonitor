@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="garcia.andres.earthquakemonitor" >
+
+    <!-- For internet -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- Google maps permissions-->
+    <permission
+        android:name="garcia.andres.earthquakemonitor.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+        <!-- To render maps (OpenGL ES v2)-->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="andres.garcia.earthquakemonitor.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/magnitude1"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:name="garcia.andres.earthquakemonitor.app.AppController">
+        <activity
+            android:name=".EarthQuakeMainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="garcia.andres.earthquakemonitor.DetailQuake"></activity>
+
+        <!-- Google play services meta-data -->
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> -->
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyARmNoRYBRTx2qjEKkPBj_8eJbuzr9iCYk"/>
+
+    </application>
+
+</manifest>

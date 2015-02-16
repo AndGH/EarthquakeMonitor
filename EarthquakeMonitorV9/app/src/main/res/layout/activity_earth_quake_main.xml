@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/black"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".EarthQuakeMainActivity">
+
+
+    <TextView
+        android:id="@+id/tv_last_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/last_hour"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+    <ListView
+        android:id="@+id/lst_list"
+        android:layout_width="match_parent"
+        android:layout_height="250sp"
+        android:layout_below="@+id/tv_last_hour"
+        android:background="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/tv_summary_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lst_list"
+        android:textColor="@color/white"
+        android:text="@string/summary"
+        />
+
+    <fragment
+        android:id="@+id/map_fragment_summary"
+        android:layout_below="@+id/tv_summary_map"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="10sp"
+        class="com.google.android.gms.maps.SupportMapFragment">
+
+    </fragment>
+
+</RelativeLayout>
